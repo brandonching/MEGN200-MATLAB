@@ -13,6 +13,7 @@ z(:,1) = 1;
 z(1,:) = 2;
 z(:,10) = 3;
 z(10,:) = 4;
+z
 
 %% Tuesday Problem 2
 
@@ -60,9 +61,9 @@ clc; clear;
 close all;
 
 X = magic(5);
-A = X(1:2:end,1:2:end);
-B = X(2:end-1,2:end-1);
-C = [diag(X,1),diag(X,-1)];
+A = X(1:2:end,1:2:end)
+B = X(2:end-1,2:end-1)
+C = [diag(X,1),diag(X,-1)]
 
 
 %% Thursday Problem 2
@@ -84,4 +85,9 @@ close all;
 
 [num,txt,raw]=xlsread('Top_NFL_Fantasy_Stats');
 top_passing_yards = max(num(:,6));
-top_passing_player = find(num==top_passing_yards,1)
+[row, column] = find(num==top_passing_yards,1);
+top_passing_player = txt(row+1,2);
+
+fprintf('Top NFL Passing Player => %s', string(top_passing_player))
+fprintf("\nPlayer's Passing Yards => %i", top_passing_yards)
+
