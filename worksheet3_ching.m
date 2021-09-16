@@ -13,6 +13,7 @@ z(:,1) = 1;
 z(1,:) = 2;
 z(:,10) = 3;
 z(10,:) = 4;
+z
 
 %% Tuesday Problem 2
 
@@ -60,9 +61,9 @@ clc; clear;
 close all;
 
 X = magic(5);
-A = X(1:2:end,1:2:end);
-B = X(2:end-1,2:end-1);
-C = [diag(X,1),diag(X,-1)];
+A = X(1:2:end,1:2:end)
+B = X(2:end-1,2:end-1)
+C = [diag(X,1),diag(X,-1)]
 
 
 %% Thursday Problem 2
