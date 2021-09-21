@@ -159,18 +159,9 @@ clc; clear;
 close all;
 
 Matrix = randi([-5 5] , [3  4])
-[r, c] = size(Matrix);
-pos_sum = 0;
-neg_sum = 0;
+[r, c] = size(Matrix)
+
 for row = 1:r
     for column = 1:c
-        if Matrix(row, column) >0
-            pos_sum = pos_sum + Matrix(row, column);
-        else
-            neg_sum = neg_sum + Matrix(row, column);
-        end
-    end
+        disp(row
 end
-
-fprintf("The Positive Sum is: %i", pos_sum)
-fprintf("\nThe Negative Sum is: %i", neg_sum)
