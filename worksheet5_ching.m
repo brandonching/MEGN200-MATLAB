@@ -123,12 +123,14 @@ close all;
 
 
 days = [1:30]
-rice_count = [1];
+rice_given = [1];
+rice_total = [1];
 for day = 1:29
-    rice_count = [rice_count, rice_count(end)*2];
+    rice_given = [rice_given, rice_given(end)*2];
+    rice_total = [rice_total, rice_total(day) + rice_given(day+1)];
 end
 
-lb_of_rice = rice_count/23000;
+lb_of_rice = rice_total/23000;
 cost_of_rice = lb_of_rice*0.85;
 
 fprintf('Rani Would Make $%0.2f After 30 Days', cost_of_rice(end))
