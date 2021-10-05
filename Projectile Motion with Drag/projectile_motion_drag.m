@@ -1,12 +1,25 @@
 function [x,y,vx,vy,t] = projectile_motion_drag(v,angle,g,m,A,cd,rho,y,x) % keep this function name and inputs the same for compatability
-% Create a help entry here to explain this function when you type
-% "help projectile_motion_drag" in the command window
-% The help file should explain the inputs, outputs, how it works, and any
-% key assumptions
-% see example and https://www.mathworks.com/help/matlab/matlab_prog/add-help-for-your-program.html
+% PROJECTILE_MOTION_DRAG
+%   [x,y,vx,vy,t] = projectile_motion_drag(v,angle,g,m,A,cd,rho,y,x) tries
+%   to calculate the projectile motion based on inputs, assumes v is
+%   initial velocity in m/s, angle is inital launch angle in degrees, g is
+%   the gravitational constant, m is the mass of the projectile in kg, A is the
+%   cross-sectional area of the projectile in m^3, cd is the dimensionless 
+%   co-efficient of drag, rho is the air density in kg/m^3, x is the inital 
+%   starting horizontal distance in m, and y is the inital stating height in m
+%   All output arrays have 0.001s seperation between indecies and are the 
+%   horizontal distance x, vertical distance y, horizontal velocity vx, 
+%   vertical velocity vy, and time t. 
 %
+% Limitations
+%   Projectile calculations only calculate the first 100s and will not
+%   return any values after 100s
 %
+% Assumtions
+%   Calculations end when projectile collides with x=0, projectiles
+%   traveling below x=0 will not be calculated
 %
+
 % MEGN200: Projectile Motion
 % Section - C
 % Brandon Ching
