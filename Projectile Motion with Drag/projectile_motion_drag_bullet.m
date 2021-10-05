@@ -23,14 +23,14 @@ x=0;% x, initial horizontal position, m
 % find out how high the round travels vertically under these conditions
 max_height = max(y1);
 flight_time = max(t1);
-fprintf('A 7.62 bullet shot strait up at %im/s will reach a height of %0.2fm, with a ground impact time of %0.2fs', v, max_height, flight_time) 
+fprintf('A 7.62 bullet shot straight up at %im/s will reach a height of %0.2fm, with a ground impact time of %0.2fs', v, max_height, flight_time) 
 
 % plot the vertical height of the project over time with appropriate axes
 yyaxis left
 plot(t1,y1, 'LineWidth', 3);
 xlabel('Time')
 ylabel('Height (m)')
-title('Bullet Shot Strait Up')
+title('Bullet Shot Straight Up')
 axis([0 50 0 2500])
 set(gca,'FontSize',14)
 

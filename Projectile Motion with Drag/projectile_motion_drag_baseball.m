@@ -63,5 +63,5 @@ fprintf('Max Distances\n\tSea Level Drag: %0.2fm\n\tWithout Drag: %0.2fm\n\tDenv
 pdif_no_drag = (abs(max_sea_drag-max_no_drag)/((max_sea_drag+max_no_drag)/2))*100;
 pdif_denver_drag = (abs(max_sea_drag-max_denver_drag)/((max_sea_drag+max_denver_drag)/2))*100;
 
-fprintf('Precent Differance in max horizontal distance relative to baseball at sea level')
+fprintf('Precent difference in max horizontal distance relative to baseball at sea level')
 fprintf('\n\tWithout Drag: %0.2f%%\n\tDenver Drag: %0.2f%%\n', pdif_no_drag, pdif_denver_drag)
