@@ -37,4 +37,7 @@ for n = 1:length(time_guess)-1
     % if using a for loop, use conditional statement here to break loop
     % if using a while loop, make sure to increment loop step n by 1
     % end loop
+    if y(n+1)<=0
+        break
+    end
 end     % end function

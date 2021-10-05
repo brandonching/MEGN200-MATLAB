@@ -19,7 +19,6 @@ x = 0; % x, initial horizontal position, m
 
 % call the projectile_motion_drag function times with the function inputs, i.e.
 [x1,y1,vx1,vy1,t1] = projectile_motion_drag(v,angle,g,m,A,cd,rho,y,x);
-above_ground1 = y1>=0;
 % store first set of outputs
 % calculate the max horizontal position of the baseball
 
@@ -27,7 +26,6 @@ above_ground1 = y1>=0;
 cd = 0;
 % call the projectile_motion_drag function with the function inputs, i.e.
 [x2,y2,vx2,vy2,t2] = projectile_motion_drag(v,angle,g,m,A,cd,rho,y,x);
-above_ground2 = y2>=0;
 
 % store second set of outputs
 % calculate the max horizontal position of the baseball
@@ -37,16 +35,15 @@ cd = 0.5;
 rho = 0.82*(1.2);
 % call the projectile_motion_drag function with the function inputs
 [x3,y3,vx3,vy3,t3] = projectile_motion_drag(v,angle,g,m,A,cd,rho,y,x);
-above_ground3 = y3>=0;
 % store third set of outputs
 % calculate the max horizontal position of the baseball
 
 % plot results on the same plot as shown in baseball example plot
 % plot commands here
 hold on
-plot(x1(above_ground1), y1(above_ground1), 'r', 'LineWidth', 2);
-plot(x2(above_ground2), y2(above_ground2), 'k--', 'LineWidth', 2);
-plot(x3(above_ground3), y3(above_ground3), 'b', 'LineWidth', 2);
+plot(x1, y1, 'r', 'LineWidth', 2);
+plot(x2, y2, 'k--', 'LineWidth', 2);
+plot(x3, y3, 'b', 'LineWidth', 2);
 legend('Sea Level Drag', 'Without Drag', 'Denver Drag')
 xlabel('x(m)')
 ylabel('y(m)')
@@ -57,15 +54,14 @@ set(gca,'FontSize',14)  % set text size for the entire figure
 axis([0 300 0 50])
 % print out the % difference in vertical and horizontal distance of the baseball relative to sea level
 
-max_sea_drag = max(x1(above_ground1));
-max_no_drag = max(x2(above_ground2));
-max_denver_drag = max(x3(above_ground3));
+max_sea_drag = max(x1);
+max_no_drag = max(x2);
+max_denver_drag = max(x3);
 
 fprintf('Max Distances\n\tSea Level Drag: %0.2fm\n\tWithout Drag: %0.2fm\n\tDenver Drag %0.2fm\n', max_sea_drag, max_no_drag, max_denver_drag)
 
 pdif_no_drag = (abs(max_sea_drag-max_no_drag)/((max_sea_drag+max_no_drag)/2))*100;
 pdif_denver_drag = (abs(max_sea_drag-max_denver_drag)/((max_sea_drag+max_denver_drag)/2))*100;
-
 
 fprintf('Precent Differance in max horizontal distance relative to baseball at sea level')
 fprintf('\n\tWithout Drag: %0.2f%%\n\tDenver Drag: %0.2f%%\n', pdif_no_drag, pdif_denver_drag)
